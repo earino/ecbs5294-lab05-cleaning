@@ -87,5 +87,5 @@ print(f"silver: {n:,} rows -> data/silver/waste.parquet; set aside: {m:,} rows -
 #    Print them as one line that adds up to the observations in `long`, on every run. Stop the run if it does not.
 
 
-# F. The key check.
+# F. The key check (after the note, if there is time).
 #    Stop the run, with the number in the message, if silver's key is not unique.

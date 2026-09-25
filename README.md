@@ -89,10 +89,15 @@ are empty: they are yours.
      `:` is retained, as `NULL`): the rows of `data/silver/waste.parquet`.
 
    Print them as one line that adds up to the observations in `long`, on every run. Stop the run if it does not.
-4. **The key check — section F.** Stop the run, with the number in the message, if silver's key is not unique.
-   The dictionary says what one row of silver is.
-5. `DIAGNOSIS.md`, all five parts, short. **Keep five minutes for it.** Then the last ten minutes, below, and the
-   Moodle checkpoint.
+4. `DIAGNOSIS.md`, all five parts, short. **Start it at minute 27 at the latest**, finished or not, and keep five minutes for it. Then the last ten
+   minutes, below, and the Moodle checkpoint.
+5. **After the note, if there is time: the key check — section F.** Stop the run, with the number in the message, if
+   silver's key is not unique. The dictionary says what one row of silver is. (Block 6 and Lab 6 build key checks in
+   full; Homework 3 needs one per silver table.)
+
+**The milestone: by minute 22** you have section C rewritten, and a rerun whose report fills more than 15 countries.
+That is the lab's one idea, built: the number and the flag, apart, with nothing lost silently. If you are not there
+by minute 22, raise your hand: staff come to you first.
 
 ## Rules
 
@@ -117,7 +122,7 @@ Staff will say these over the room at minutes 5, 10, and 15. Read them earlier i
 ## Diagnosis note
 
 In `DIAGNOSIS.md`: the template is there. Part 3 is the notebook's five queries and their output; question 5's
-split is the heart of it. Part 4 is your section C. Part 5 is the accounting line your pipeline prints, the key check,
+split is the heart of it. Part 4 is your section C. Part 5 is the accounting line your pipeline prints (and the key check, if you reached it),
 and one reconciliation: the number of countries with a 2024 value in gold, against question 5's cells that hold a
 number.
 
