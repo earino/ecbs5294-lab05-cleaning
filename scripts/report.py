@@ -1,4 +1,4 @@
-"""Silver -> gold: municipal waste generated per inhabitant, by country, in 2024, and the change since 2010.
+"""Silver -> gold: municipal waste generated per inhabitant, by place, in 2024, and the change since 2010.
 
 Run by pipeline.py (or on its own: uv run python scripts/report.py). Reads data/silver/waste.parquet, writes
 data/gold/waste_per_inhabitant.csv, and prints it. This script is correct if silver is right. Do not change it.
@@ -13,8 +13,8 @@ os.chdir(PROJECT_ROOT)
 Path("data/gold").mkdir(parents=True, exist_ok=True)
 con = duckdb.connect()
 
-# Gold: one row per country. Waste generated (wst_oper GEN), kilograms per inhabitant.
-# The EU27_2020 row is a group of countries, not a country: it is printed below the table, not in it.
+# Gold: one row per place (one `geo` code that is not a group). Waste generated (wst_oper GEN), kilograms per inhabitant.
+# The EU27_2020 row is a group, not one place: it is printed below the table, not in it.
 con.sql("""
     CREATE VIEW gold AS
     SELECT geo,
@@ -41,11 +41,11 @@ countries, with_2024, with_change, flagged_2024 = con.sql("""
 eu = con.sql("""
     SELECT value, flag FROM 'data/silver/waste.parquet' WHERE wst_oper = 'GEN' AND is_aggregate AND year = 2024
 """).fetchone()
-print(f"\nCountries in gold: {countries}")
-print(f"Countries with a 2024 value: {with_2024}")
-print(f"Countries with a change since 2010: {with_change}")
+print(f"\nPlaces in gold: {countries}")
+print(f"Places with a 2024 value: {with_2024}")
+print(f"Places with a change since 2010: {with_change}")
 print(f"2024 values that carry a flag: {flagged_2024}")
 if eu is not None:
     eu_value = "-" if eu[0] is None else f"{eu[0]:g}"
-    print(f"EU27_2020 (a group of countries, not in the table), 2024: {eu_value} {eu[1] or ''}".rstrip())
+    print(f"EU27_2020 (a group, not in the table), 2024: {eu_value} {eu[1] or ''}".rstrip())
 print("-> data/gold/waste_per_inhabitant.csv")

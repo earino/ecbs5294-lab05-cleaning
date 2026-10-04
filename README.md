@@ -6,7 +6,7 @@
 
 | | |
 |---|---|
-| **The question** | How much municipal waste did each country generate per person in 2024, and how has that changed since 2010? |
+| **The question** | How much municipal waste was generated per person in 2024 in each place the file reports, and how has that changed since 2010? A *place* is one `geo` code that is not a group. |
 | **The file** | `data/raw/env_wasmun.tsv` — Eurostat, municipal waste, as Eurostat publishes it. What silver must contain: `docs/dictionary.md`. |
 | **What is wrong** | The pipeline runs without an error, and its report disagrees with the raw file. |
 | **What you hand in** | `DIAGNOSIS.md` on Moodle, before you leave. |
@@ -56,7 +56,7 @@ uv run python pipeline.py
 
 ## What is broken
 
-The report says **15 countries** have a 2024 value. Germany, France and Spain are among the blanks.
+The report says **15 places** have a 2024 value. Germany, France and Spain are among the blanks.
 
 Eurostat's file has a 2024 value for Germany. See for yourself, in the terminal:
 
@@ -95,7 +95,7 @@ are empty: they are yours.
    silver's key is not unique. The dictionary says what one row of silver is. (Block 6 and Lab 6 build key checks in
    full; Homework 3 needs one per silver table.)
 
-**The milestone: by minute 22** you have section C rewritten, and a rerun whose report fills more than 15 countries.
+**The milestone: by minute 22** you have section C rewritten, and a rerun whose report fills more than 15 places.
 That is the lab's one idea, built: the number and the flag, apart, with nothing lost silently. If you are not there
 by minute 22, raise your hand: staff come to you first.
 
@@ -111,7 +111,7 @@ by minute 22, raise your hand: staff come to you first.
 
 Staff will say these over the room at minutes 5, 10, and 15. Read them earlier if you want.
 
-1. Question 1 shows you the cell for a country the report left blank. Now look at the cell for a country the report
+1. Question 1 shows you the cell for a place the report left blank. Now look at the cell for a place the report
    did fill, in the same year. What is different about the two cells?
 2. Put the two cells through the colleague's cast, `TRY_CAST(cell AS DOUBLE)`. What does each one return? Question 3
    counts every cell that behaves like the first one.
@@ -123,7 +123,7 @@ Staff will say these over the room at minutes 5, 10, and 15. Read them earlier i
 
 In `DIAGNOSIS.md`: the template is there. Part 3 is the notebook's five queries and their output; question 5's
 split is the heart of it. Part 4 is your section C. Part 5 is the accounting line your pipeline prints (and the key check, if you reached it),
-and one reconciliation: the number of countries with a 2024 value in gold, against question 5's cells that hold a
+and one reconciliation: the number of places with a 2024 value in gold, against question 5's cells that hold a
 number.
 
 ## Stretch task

@@ -60,7 +60,7 @@ con.sql("""
 con.sql("""
     CREATE VIEW silver AS
     SELECT geo, wst_oper, year, value, flag,
-           geo = 'EU27_2020' AS is_aggregate    -- the EU as a whole: a group of countries, not a country
+           geo = 'EU27_2020' AS is_aggregate    -- the EU as a whole: a group, not one place
     FROM parsed
     WHERE reason IS NULL
 """)

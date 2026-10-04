@@ -18,4 +18,4 @@ Municipal waste per inhabitant, from Eurostat's `env_wasmun` (`data/raw/env_wasm
 | `year` | INTEGER | the year | 2010–2024 | never missing | a column header in the raw file, turned into a row |
 | `value` | DOUBLE | kilograms of municipal waste per inhabitant, in that year | 0 or more | Eurostat wrote `:`, "not available" | the number Eurostat wrote in the cell |
 | `flag` | VARCHAR | Eurostat's note on that value: `e` estimated, `p` provisional, `b` break in the series, `i` imputed by Eurostat, or a combination (`ep`, `be`) | the codes in `data/raw/codelist_obs_flag.tsv` | the value has no flag | the letters Eurostat wrote after the number, kept as written |
-| `is_aggregate` | BOOLEAN | `true` for `EU27_2020`, a group of countries; `false` for a country | `true`, `false` | never missing | `geo` |
+| `is_aggregate` | BOOLEAN | `true` for `EU27_2020`, a group; `false` for a single place | `true`, `false` | never missing | `geo` |
