@@ -2,6 +2,8 @@
 
 Everything under `data/raw/` is real, public data, committed on purpose and **never edited**. Where it came from, its license, and exactly what was changed for this course:
 
+The names of places in these files are their publishers'. Their use in this course says nothing about the political status of any place.
+
 ## Eurostat — municipal waste (env_wasmun) and greenhouse-gas emissions (env_air_gge)
 
 **Source:** Eurostat, dissemination API (SDMX 2.1, TSV). Municipal waste by waste management operations,

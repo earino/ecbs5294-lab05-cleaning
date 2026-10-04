@@ -13,7 +13,7 @@ Municipal waste per inhabitant, from Eurostat's `env_wasmun` (`data/raw/env_wasm
 
 | Column | Type | Meaning | Allowed values | Missing means | Made from |
 |---|---|---|---|---|---|
-| `geo` | VARCHAR | the country, as Eurostat codes it (`DE` Germany, `EL` Greece, `XK` Kosovo), or `EU27_2020`, the EU as a whole | the 38 codes in the file | never missing | the 4th field of the packed first column |
+| `geo` | VARCHAR | what Eurostat calls the geopolitical entity that reports, by its code (`DE` Germany, `EL` Greece, `XK` Kosovo), or `EU27_2020`, the EU as a whole | the 38 codes in the file | never missing | the 4th field of the packed first column |
 | `wst_oper` | VARCHAR | the waste operation: `GEN` generated, `TRT` treated, `RCY` recycled, … | the codes in `data/raw/codelist_wst_oper.tsv` | never missing | the 2nd field of the packed first column |
 | `year` | INTEGER | the year | 2010–2024 | never missing | a column header in the raw file, turned into a row |
 | `value` | DOUBLE | kilograms of municipal waste per inhabitant, in that year | 0 or more | Eurostat wrote `:`, "not available" | the number Eurostat wrote in the cell |
